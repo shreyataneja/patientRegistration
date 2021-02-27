@@ -112,29 +112,29 @@ class BookAppoitnmentForm extends React.Component  {
                     <div className="col-span-6 sm:col-span-3">
                    
                       <label htmlFor="patient_first_name" className="block text-sm font-medium text-gray-700">Patient First name</label>
-                      <input type="text" name="patient_first_name" id="patient_first_name" autoComplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="text" name="patient_first_name" required id="patient_first_name" autoComplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
       
                     <div className="col-span-6 sm:col-span-3">
                       <label htmlFor="patient_last_name" className="block text-sm font-medium text-gray-700">Patient Last name</label>
-                      <input type="text" name="patient_last_name" id="patient_last_name" autoComplete="family-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="text" name="patient_last_name" required id="patient_last_name" autoComplete="family-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
       
                     <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="patient_email_address" className="block text-sm font-medium text-gray-700">Patient Email address</label>
-                      <input type="email" name="patient_email_address" id="patient_email_address" autoComplete="email" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="email" name="patient_email_address" required id="patient_email_address" autoComplete="email" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
                     <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="patient_phone" className="block text-sm font-medium text-gray-700">Patient Phone Number</label> <label htmlFor="patient_phone" className="block text-sm font-medium text-gray-400"> (10 Digits Ex. 9875689876)</label>
-                      <input type="tel" maxLength="10" pattern="[0-9]{10}" name="patient_phone" id="patient_phone" autoComplete="phone" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="tel" maxLength="10" pattern="[0-9]{10}" required name="patient_phone" id="patient_phone" autoComplete="phone" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
                     <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="PrepNurse" className="block text-sm font-medium text-gray-700">Prep Nurse Name</label>
-                      <input type="text" name="PrepNurse" id="PrepNurse" autoComplete="PrepNurse" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="text" name="PrepNurse" id="PrepNurse" required autoComplete="PrepNurse" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
                     <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="Physician" className="block text-sm font-medium text-gray-700">Physician Name</label>
-                      <input type="text" name="Physician" id="Physician" autoComplete="Physician" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="text" name="Physician" id="Physician" required autoComplete="Physician" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
                     <div className="col-span-6 ">
                       <label htmlFor="ExaminationRoom" className="block text-sm font-medium text-gray-700">Examination Room</label>
@@ -147,12 +147,12 @@ class BookAppoitnmentForm extends React.Component  {
       
                     <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                       <label htmlFor="start" className="block text-sm font-medium text-gray-700">Start Date/Time</label>
-                      <input type="datetime-local" name="start" id="start" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="datetime-local" name="start" id="start" required className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
       
                     <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                       <label htmlFor="end" className="block text-sm font-medium text-gray-700">End Date/Time</label>
-                      <input type="datetime-local" name="end" id="end"  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" onChange={this.dateChange.bind(this)}/>
+                      <input type="datetime-local" name="end" id="end" required className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" onChange={this.dateChange.bind(this)}/>
                     </div>
                   </div>
                 </div>

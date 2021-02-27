@@ -53,21 +53,21 @@ class RegisterPatientForm extends React.Component
                   <div className="grid grid-cols-6 gap-6">
                     <div className="col-span-6 sm:col-span-3">
                       <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">First name</label>
-                      <input type="text" name="first_name" id="first_name" autoComplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="text" required name="first_name" id="first_name" autoComplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
       
                     <div className="col-span-6 sm:col-span-3">
                       <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">Last name</label>
-                      <input type="text" name="last_name" id="last_name" autoComplete="family-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="text" required name="last_name" id="last_name" autoComplete="family-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
       
                     <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="email_address" className="block text-sm font-medium text-gray-700">Email address</label>
-                      <input type="email" name="email_address" id="email_address" autoComplete="email" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="email" required name="email_address" id="email_address" autoComplete="email" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
                     <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label> <label htmlFor="patient_phone" className="block text-sm font-medium text-gray-400"> (10 Digits Ex. 9875689876)</label>
-                      <input type="tel" maxLength="10" pattern="[0-9]{10}" name="phone" id="phone" autoComplete="phone" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="tel" required maxLength="10" pattern="[0-9]{10}" name="phone" id="phone" autoComplete="phone" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
                     <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="sex" className="block text-sm font-medium text-gray-700">Sex</label>
@@ -79,7 +79,7 @@ class RegisterPatientForm extends React.Component
                     </div>
                     <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="age" className="block text-sm font-medium text-gray-700">Age</label>
-                      <input type="number" name="age" id="age" autoComplete="age" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="number" required name="age" id="age" autoComplete="age" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
                     <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="height" className="block text-sm font-medium text-gray-700">Height (in CM)</label>
@@ -87,11 +87,11 @@ class RegisterPatientForm extends React.Component
                     </div>
                     <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="weight" className="block text-sm font-medium text-gray-700">Weight (in Pounds)</label>
-                      <input type="number" name="weight" id="weight" autoComplete="weight" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="number"  name="weight" id="weight" autoComplete="weight" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
                     <div className="col-span-6 sm:col-span-4">
                       <label htmlFor="InsuranceID" className="block text-sm font-medium text-gray-700">Insurance ID</label>
-                      <input type="text" name="InsuranceID" id="InsuranceID" autoComplete="InsuranceID" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="text" required name="InsuranceID" id="InsuranceID" autoComplete="InsuranceID" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
 
                     <div className="col-span-6 sm:col-span-3">
@@ -105,22 +105,22 @@ class RegisterPatientForm extends React.Component
       
                     <div className="col-span-6">
                       <label htmlFor="street_address" className="block text-sm font-medium text-gray-700">Street address</label>
-                      <input type="text" name="street_address" id="street_address" autoComplete="street-address" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="text" required name="street_address" id="street_address" autoComplete="street-address" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
       
                     <div className="col-span-6 sm:col-span-6 lg:col-span-2">
                       <label htmlFor="city" className="block text-sm font-medium text-gray-700">City</label>
-                      <input type="text" name="city" id="city" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="text" required name="city" id="city" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
       
                     <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                       <label htmlFor="state" className="block text-sm font-medium text-gray-700">State / Province</label>
-                      <input type="text" name="state" id="state" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="text" required name="state" id="state" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
       
                     <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                       <label htmlFor="postal_code" className="block text-sm font-medium text-gray-700">ZIP / Postal</label>
-                      <input type="text" name="postal_code" id="postal_code" autoComplete="postal-code" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                      <input type="text" required name="postal_code" id="postal_code" autoComplete="postal-code" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                     </div>
                   </div>
                 </div>

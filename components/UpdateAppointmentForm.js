@@ -109,34 +109,34 @@ class UpdateAppointmentForm extends React.Component
            </div>
            <div className="col-span-6 sm:col-span-3">
              <label htmlFor="patient_id" className="block text-sm font-medium text-gray-700">Patient ID</label>
-             <input type="text" name="patient_id" id="patient_id" autoComplete="" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+             <input type="text" required name="patient_id" id="patient_id" autoComplete="" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
            </div>
            <div className="col-span-6 sm:col-span-3">
           
              <label htmlFor="patient_first_name" className="block text-sm font-medium text-gray-700">Patient First name</label>
-             <input type="text" name="patient_first_name" id="patient_first_name" autoComplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+             <input type="text" required name="patient_first_name" id="patient_first_name" autoComplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
            </div>
 
            <div className="col-span-6 sm:col-span-3">
              <label htmlFor="patient_last_name" className="block text-sm font-medium text-gray-700">Patient Last name</label>
-             <input type="text" name="patient_last_name" id="patient_last_name" autoComplete="family-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+             <input type="text" required name="patient_last_name" id="patient_last_name" autoComplete="family-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
            </div>
 
            <div className="col-span-6 sm:col-span-4">
              <label htmlFor="patient_email_address" className="block text-sm font-medium text-gray-700">Patient Email address</label>
-             <input type="email" name="patient_email_address" id="patient_email_address" autoComplete="email" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+             <input type="email" required name="patient_email_address" id="patient_email_address" autoComplete="email" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
            </div>
            <div className="col-span-6 sm:col-span-4">
              <label htmlFor="patient_phone" className="block text-sm font-medium text-gray-700">Patient Phone Number</label> <label htmlFor="patient_phone" className="block text-sm font-medium text-gray-400"> (10 Digits Ex. 9875689876)</label>
-             <input type="tel" maxLength="10" pattern="[0-9]{10}" name="patient_phone" id="patient_phone" autoComplete="phone" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+             <input type="tel" required maxLength="10" pattern="[0-9]{10}" name="patient_phone" id="patient_phone" autoComplete="phone" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
            </div>
            <div className="col-span-6 sm:col-span-4">
              <label htmlFor="PrepNurse" className="block text-sm font-medium text-gray-700">Prep Nurse Name</label>
-             <input type="text" name="PrepNurse" id="PrepNurse" autoComplete="PrepNurse" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+             <input type="text" required name="PrepNurse" id="PrepNurse" autoComplete="PrepNurse" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
            </div>
            <div className="col-span-6 sm:col-span-4">
              <label htmlFor="Physician" className="block text-sm font-medium text-gray-700">Physician Name</label>
-             <input type="text" name="Physician" id="Physician" autoComplete="Physician" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+             <input type="text" required name="Physician" id="Physician" autoComplete="Physician" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
            </div>
            <div className="col-span-6 ">
              <label htmlFor="ExaminationRoom" className="block text-sm font-medium text-gray-700">Examination Room</label>
