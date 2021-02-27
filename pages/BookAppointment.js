@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import BookAppoitnmentForm from "../components/BookAppoitnmentForm";
+import {BookAppoitnmentForm} from "../components/BookAppoitnmentForm";
 
 
 

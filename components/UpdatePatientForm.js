@@ -1,22 +1,65 @@
-import React, { useState } from "react";
+import React from "react";
+import Select from 'react-select';
 import axios from 'axios';
 
 
-class RegisterPatientForm extends React.Component 
+class UpdatePatientForm extends React.Component 
 {
     constructor() {
         super();
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
-            requestMessage:''
+            requestMessage:'',
+            selectOptions : [],
+            Patient_id: ""
         }
       }
-    
+      componentDidMount(){
+        this.getOptions()
+    }
+    async getOptions(e){
+      const res = await axios.get('http://localhost:8080/api/getAllPatient.php');
+      const data = res.data;
+  
+      const options = data.map(d => ({
+        "value" : d.id,
+        "label" : d.id,
+        
+
+      }))
+      
+      this.setState({selectOptions: options})
+     
+  
+    }
+    async  getPatientDetails(id)
+    {
+      const res = await axios.get('http://localhost:8080/api/getPatient.php?id='+id);
+      const data = res.data;
+
+      document.getElementById("first_name").value = data.first_name;
+      document.getElementById("last_name").value = data.last_name;
+      document.getElementById("email_address").value = data.email;
+      document.getElementById("phone").value = data.contact_number;
+      document.getElementById("sex").value = data.sex;
+      document.getElementById("age").value = data.age;
+      document.getElementById("height").value = data.height;
+      document.getElementById("weight").value = data.weight;
+      document.getElementById("InsuranceID").value = data.InsuranceID;
+      document.getElementById("street_address").value = data.street_address;
+      document.getElementById("city").value = data.city;
+      document.getElementById("state").value = data.province;
+      document.getElementById("postal_code").value = data.postal;
+    }
+    handleChange(e){
+      
+      this.getPatientDetails(e.value);
+      }
       handleSubmit(event) {
         event.preventDefault();
         const data = new FormData(event.target);
    
-        const article = {   
+        const article = {   "id" : data.get('id'),
                             "first_name" : data.get('first_name'), 
                             "last_name" : data.get('last_name'), 
                             "sex" : data.get('sex'), 
@@ -31,14 +74,14 @@ class RegisterPatientForm extends React.Component
                             "province" : data.get('state'),
                             "postal" : data.get('postal_code')
                             };
-                            console.log(JSON.stringify(article));
+                           
         const headers = { 
             'Content-Type': 'text/plain'
         };
-        axios.post('http://localhost:8080/api/addPatient.php', JSON.stringify(article), { headers })
+        axios.post('http://localhost:8080/api/updatePatient.php', JSON.stringify(article), { headers })
             .then(response => {const requestMessage = response.data;this.setState({requestMessage: requestMessage});});
+
             event.target.reset();    
-         
       }
     render() { 
     return(
@@ -46,11 +89,17 @@ class RegisterPatientForm extends React.Component
   
         
           <div className="mt-5 ">
-              
+
             <form action="#" method="POST" onSubmit={this.handleSubmit}>
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
+                  <div className="col-span-6 ">
+                  <label htmlFor="patient_id" className="block text-sm font-medium text-gray-700">Select Patient ID </label>
+                    <Select  name="patient_id" id="patient_id" 
+                    options={this.state.selectOptions} onChange={this.handleChange.bind(this)} />
+              
+                    </div>
                     <div className="col-span-6 sm:col-span-3">
                       <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">First name</label>
                       <input type="text" name="first_name" id="first_name" autoComplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
@@ -126,7 +175,7 @@ class RegisterPatientForm extends React.Component
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <button type="submit" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                    Save Patient Details
+                    Update Patient Details
                   </button>
                 </div>
                 <span className="text-green-500"> { this.state.requestMessage}</span>
@@ -139,4 +188,4 @@ class RegisterPatientForm extends React.Component
 
 }
 }
-export { RegisterPatientForm }; 
+export { UpdatePatientForm }; 

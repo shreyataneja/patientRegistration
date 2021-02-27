@@ -1,9 +1,9 @@
 import Layout from "../components/Layout";
-import RegisterPatientForm from "../components/RegisterPatientForm";
+import {RegisterPatientForm} from "../components/RegisterPatientForm";
 
 
-export default function RegisterPatients({data}) {
-  console.log(data);
+export default function RegisterPatients({}) {
+
   return (
  
     <Layout title="Register Patients">
@@ -13,18 +13,4 @@ export default function RegisterPatients({data}) {
                 <RegisterPatientForm></RegisterPatientForm>
     </Layout>
   );
-}
-export async function getStaticProps(context) {
-  const res = await fetch(`http://localhost:8080/api/getAllPatient.php`)
-  const data = await res.json()
-
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-
-  return {
-    props: {data}, // will be passed to the page component as props
-  }
 }
